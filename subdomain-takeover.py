@@ -18,16 +18,53 @@ import requests
 # -- https://github.com/EdOverflow/can-i-take-over-xyz
 
 services = {
-	'AWS/S3'     : {'code':'[300-499]','error':r'The specified bucket does not exit'},
-	'BitBucket'  : {'code':'[300-499]','error':r'Repository not found'},
-	'CloudFront' : {'code':'[300-499]','error':r'ERROR\: The request could not be satisfied'},
-	'Github'     : {'code':'[300-499]','error':r'There isn\'t a Github Pages site here\.'},
-	'Shopify'    : {'code':'[300-499]','error':r'Sorry\, this shop is currently unavailable\.'},
-	'Desk'       : {'code':'[300-499]','error':r'Sorry\, We Couldn\'t Find That Page'},
-	'Fastly'     : {'code':'[300-499]','error':r'Fastly error\: unknown domain\:'},
-	'FeedPress'  : {'code':'[300-499]','error':r'The feed has not been found\.'},
-	'Ghost'      : {'code':'[300-499]','error':r'The thing you were looking for is no longer here\, or never was'},
-        'Heroku'     : {'code':'[300-499]','error':r'no-such-app.html'},
+	'AWS/S3'          : {'code':'[300-499]','error':r'The specified bucket does not exit'},
+	'BitBucket'       : {'code':'[300-499]','error':r'Repository not found'},
+	'CloudFront'      : {'code':'[300-499]','error':r'ERROR\: The request could not be satisfied'},
+	'Github'          : {'code':'[300-499]','error':r'There isn\'t a Github Pages site here\.'},
+	'Shopify'         : {'code':'[300-499]','error':r'Sorry\, this shop is currently unavailable\.'},
+	'Desk'            : {'code':'[300-499]','error':r'Sorry\, We Couldn\'t Find That Page'},
+	'Fastly'          : {'code':'[300-499]','error':r'Fastly error\: unknown domain\:'},
+
+	'FeedPress'       : {'code':'[300-499]','error':r'The feed has not been found\.'},
+	'Ghost'           : {'code':'[300-499]','error':r'The thing you were looking for is no longer here\, or never was'},
+	'Heroku'          : {'code':'[300-499]','error':r'no-such-app.html|<title>no such app</title>|herokucdn.com/error-pages/no-such-app.html'},
+	'Pantheon'        : {'code':'[300-499]','error':r'The gods are wise, but do not know of the site which you seek.'},
+	'Tumbler'         : {'code':'[300-499]','error':r'Whatever you were looking for doesn\'t currently exist at this address.'},
+	'Wordpress'       : {'code':'[300-499]','error':r'Do you want to register'},
+	'Desk'            : {'code':'[300-499]','error':r'Sorry, We Couldn\'t Find That Page'},
+	'ZenDesk'         : {'code':'[300-499]','error':r'Help Center Closed'},
+
+	'TeamWork'        : {'code':'[300-499]','error':r'Oops - We didn\'t find your site.'},
+	'Helpjuice'       : {'code':'[300-499]','error':r'We could not find what you\'re looking for.'},
+	'Helpscout'       : {'code':'[300-499]','error':r'No settings were found for this company:'},
+	'S3Bucket'        : {'code':'[300-499]','error':r'The specified bucket does not exist'},
+	'Cargo'           : {'code':'[300-499]','error':r'<title>404 &mdash; File not found</title>'},
+	'StatuPage'       : {'code':'[300-499]','error':r'You are being <a href=\"https://www.statuspage.io\">redirected'},
+	'Uservoice'       : {'code':'[300-499]','error':r'This UserVoice subdomain is currently available!'},
+	'Surge'           : {'code':'[300-499]','error':r'project not found'},
+	'Intercom'        : {'code':'[300-499]','error':r'This page is reserved for artistic dogs\.|Uh oh\. That page doesn\'t exist</h1>'},
+
+	'Webflow'         : {'code':'[300-499]','error':r'<p class=\"description\">The page you are looking for doesn\'t exist or has been moved.</p>'},
+	'Kajabi'          : {'code':'[300-499]','error':r'<h1>The page you were looking for doesn\'t exist.</h1>'},
+	'Thinkific'       : {'code':'[300-499]','error':r'You may have mistyped the address or the page may have moved.'},
+	'Tave'            : {'code':'[300-499]','error':r'<h1>Error 404: Page Not Found</h1>'},
+
+	'Wishpond'        : {'code':'[300-499]','error':r'<h1>https://www.wishpond.com/404?campaign=true'},
+	'Aftership'       : {'code':'[300-499]','error':r'Oops.</h2><p class=\"text-muted text-tight\">The page you\'re looking for doesn\'t exist.'},
+	'Aha'             : {'code':'[300-499]','error':r'There is no portal here \.\.\. sending you back to Aha!'},
+	'Tictail'         : {'code':'[300-499]','error':r'to target URL: <a href=\"https://tictail.com|Start selling on Tictail.'},
+	'Brightcove'      : {'code':'[300-499]','error':r'<p class=\"bc-gallery-error-code\">Error Code: 404</p>'},
+	'Bigcartel'       : {'code':'[300-499]','error':r'<h1>Oops! We couldn&#8217;t find that page.</h1>'},
+	'ActiveCampaign'  : {'code':'[300-499]','error':r'alt=\"LIGHTTPD - fly light.\"'},
+
+	'Campaignmonitor' : {'code':'[300-499]','error':r'Double check the URL or <a href=\"mailto:help@createsend.com'},
+	'Acquia'          : {'code':'[300-499]','error':r'The site you are looking for could not be found.|If you are an Acquia Cloud customer and expect to see your site at this address'},
+	'Proposify'       : {'code':'[300-499]','error':r'If you need immediate assistance, please contact <a href=\"mailto:support@proposify.biz'},
+	'Simplebooklet'   : {'code':'[300-499]','error':r'We can\'t find this <a href=\"https://simplebooklet.com'},
+	'GetResponse'     : {'code':'[300-499]','error':r'With GetResponse Landing Pages, lead generation has never been easier'},
+	'Vend'            : {'code':'[300-499]','error':r'Looks like you\'ve traveled too far into cyberspace.'},
+	'Jetbrains'       : {'code':'[300-499]','error':r'is not a registered InCloud YouTrack.'},
 }
 
 # -- colors
@@ -42,17 +79,12 @@ b_='\033[0;34m'
 e_='\033[0m'
 
 # -- print
-def plus(string):
-	print("{}[+]{} {}{}{}".format(g,e_,g_,string,e_))
-
-def warn(string):
-	print("{}[!]{} {}{}{}".format(r,e_,r_,string,e_))
-
-def info(string):
-	print("{}[i]{} {}{}{}".format(y,e_,y_,string,e_))
+def plus(string): print("{}[+]{} {}{}{}".format(g,e_,g_,str(string),e_))
+def warn(string): print("{}[!]{} {}{}{}".format(r,e_,r_,str(string),e_))
+def info(string): print("{}[i]{} {}{}{}".format(y,e_,y_,str(string),e_))
 
 def request(url,proxy):
-	headers = {'User-Agent':'Mozilla/5.0'}
+	headers = {'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'}
 	try:
 		req = requests.packages.urllib3.disable_warnings(
 			urllib3.exceptions.InsecureRequestWarning
@@ -63,7 +95,7 @@ def request(url,proxy):
 			req = requests.get(url=url,headers=headers)
 		return req.status_code,req.content
 	except Exception as e:
-		warn('%s'%e.message)
+		pass
 	return None,None
 
 def checker(status,content):
@@ -82,21 +114,31 @@ def checker(status,content):
 	return None,None
 
 def banner():
-	print "                            "
-	print "   /~\\  ----------------    "
-	print "  C oo  |S|U|B|D|O|M|A|I|N|  "
- 	print " _( ^)   |T|A|K|E|O|V|E|R|   "
-	print "/   ~\\  ----------------   "
-	print "#> by Nishit (nishitm) "
-	print "#> http://github.com/nishitm "
-	print "-"*40
+        print "          _ _"
+        print "     _(,_/ \ \____________"
+        print "     |`. \_@_@   `.     ,'"
+        print "     |\ \ .        `-,-'"
+        print "     || |  `-.____,-'"
+        print "     || /  /"
+        print "     |/ |  |"
+        print "`..     /   \     ----------------        "
+        print "  \\\   /    |    |S|U|B|D|O|M|A|I|N|      "
+        print "  ||  |      \    |T|A|K|E|O|V|E|R|       "
+        print "   \\\ /-.    |    ----------------        "
+        print "   ||/  /_   |  by Nishit (nishitm)       "
+        print "  \(_____)-'_)  http://github.com/nishitm "
+        print "-"*50
 
 def help():
 	banner()
 	print "Usage: subdomain-takeover.py [OPTIONS]\n"
 	print "\t-s --sub-domain\t\tSet sub-domain URL (e.g: sub.example.com)"
 	print "\t-l --sub-domain-list\tScan multiple targets in a text file"
-	print "\t-p --set-proxy\t\tUse a proxy to connect to the target URL\n"
+	print "\t-p --set-proxy\t\tUse a proxy to connect to the target URL"
+	print "\t-o --set-output\t\tUse this setting for save a file\n"
+	print "Example:"
+	print "\t%s --sub-domain test.test.com"%(sys.argv[0])
+	print "\t%s --sub-domain-list sub.txt --set-output sub_output.txt\n"%(sys.argv[0])
 	sys.exit()
 
 def sett_proxy(proxy):
@@ -120,7 +162,7 @@ def readfile(path):
 	try:
 		return [l.strip() for l in open(check_path(path),'rb')]
 	except Exception as e:
-		warn('%s'%e.message)
+		warn('%s'%e)
 		sys.exit()
 
 def check_url(url):
@@ -138,13 +180,14 @@ def check_url(url):
 def main():
 	# ---
 	set_proxy = None
+	set_output = None
 	sub_domain = None
 	sub_domain_list = None
 	# ---
 	if len(sys.argv) < 2: help()
 	try:
-		opts,args = getopt.getopt(sys.argv[1:],'s:l:p:',
-			['sub-domain=','sub-domain-list=','set-proxy='])
+		opts,args = getopt.getopt(sys.argv[1:],'s:l:p:o:',
+			['sub-domain=','sub-domain-list=','set-proxy=','set-output='])
 	except Exception as e:
 		warn("%s"%e.message)
 		time.sleep(1)
@@ -154,7 +197,11 @@ def main():
 		if o in ('-s','--sub-domain'):sub_domain = check_url(a)
 		if o in ('-l','--sub-domain-list'):sub_domain_list = readfile(a)
 		if o in ('-p','--set-proxy'):set_proxy = sett_proxy(a)
+		if o in ('-o','--set-output'):set_output = a
 	# ---
+	if set_output:
+		file = open(set_output,"wb")
+		file.write('Output File\r\n%s\r\n'%("-"*50))
 	if sub_domain:
 		plus('Starting scanning...')
 		info('Target url... %s'%sub_domain)
@@ -171,9 +218,13 @@ def main():
 			status,content = request(sub_domain,set_proxy)
 			service,error = checker(status,content)
 			if service and error:
-				plus('Found service \"%s\" -> %s'%(service,sub_domain))
-				plus('A potential TAKEOVER vulnerability found!')
+				if set_output:
+					file.write('HOST    : %s\r\n'%(sub_domain))
+					file.write('SERVICE : %s\r\n'%(service))
+					file.write('ERRORS  : %s\r\n'%(error))
 	else:help()
+        if set_output:
+            file.close()
 try:
 	main()
 except KeyboardInterrupt as e:
