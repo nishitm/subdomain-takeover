@@ -197,7 +197,7 @@ def main():
 	if len(sys.argv) < 2: help()
 	try:
             opts,args = getopt.getopt(sys.argv[1:],'s:l:p:o:t:',
-			['sub-domain=','sub-domain-list=','set-proxy=','set-output=','set-timeout'])
+			['sub-domain=','sub-domain-list=','set-proxy=','set-output=','set-timeout='])
 	except Exception as e:
 		warn("%s"%e.message)
 		time.sleep(1)
@@ -208,7 +208,7 @@ def main():
 		if o in ('-l','--sub-domain-list'):sub_domain_list = readfile(a)
 		if o in ('-p','--set-proxy'):set_proxy = sett_proxy(a)
 		if o in ('-o','--set-output'):set_output = a
-                if o in ('-t','--set-timeout'):set_timeout = a
+                if o in ('-t','--set-timeout'):set_timeout = int(a)
 	# ---
 	if set_output:
 		file = open(set_output,"wb")
