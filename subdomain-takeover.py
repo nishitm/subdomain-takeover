@@ -65,6 +65,13 @@ services = {
 	'GetResponse'     : {'code':'[300-499]','error':r'With GetResponse Landing Pages, lead generation has never been easier'},
 	'Vend'            : {'code':'[300-499]','error':r'Looks like you\'ve traveled too far into cyberspace.'},
 	'Jetbrains'       : {'code':'[300-499]','error':r'is not a registered InCloud YouTrack.'},
+	'Unbounce'        : {'code':'[300-499]','error':r'The requested URL / was not found on this server|The requested URL was not found on this server'},
+	'Tictail'         : {'code':'[300-499]','error':r'Building a brand of your own\?|to target URL: \<a href\=\\\"https://tictail.com|Start selling on Tictail.'},
+	'Smartling'       : {'code':'[300-499]','error':r'Domain is not configured'},
+	'Pingdom'         : {'code':'[300-499]','error':r'pingdom'},
+	'Tilda'           : {'code':'[300-499]','error':r'Domain has been assigned'},
+	'Surveygizmo'     : {'code':'[300-499]','error':r'data-html-name'},
+	'Mashery'         : {'code':'[300-499]','error':r'Unrecognized domain <strong>'},
 }
 
 # -- colors
