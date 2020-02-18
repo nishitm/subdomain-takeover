@@ -249,7 +249,7 @@ def main():
         service, error = checker(status, content)
         if service and error:
             plus('Found service: %s' % service)
-            plus('A potential TAKEOVER vulnerability found!')
+            plus('A potential TAKEOVER vulnerability!')
     elif sub_domain_list:
         plus('Starting scanning...')
         for sub_domain in sub_domain_list:
@@ -258,6 +258,8 @@ def main():
             status, content = request(sub_domain, set_proxy, set_timeout)
             service, error = checker(status, content)
             if service and error:
+                plus('Found service: %s'%service)
+                plus('A potential TAKEOVER vulnerability!')
                 if set_output:
                     file.write('HOST    : %s\r\n' % (sub_domain))
                     file.write('SERVICE : %s\r\n' % (service))
